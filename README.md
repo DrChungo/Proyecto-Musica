@@ -69,6 +69,20 @@ src/
   - Input para introducir el link de la canción
   - Botón para añadirla a la lista
 
+## Descripción de las páginas
+
+ - **principal**
+    - Página principal de la aplicación. Contiene la sección hero con el vídeo y las acciones principales.
+
+- **guardadas**
+    - Página donde se muestran las canciones guardadas por el usuario, utilizando el componente de lista de canciones.
+
+- **add**
+    - Página destinada a añadir nuevas canciones mediante el formulario correspondiente.
+
+- **login**
+    - Página de inicio de sesión, que contiene el formulario de login con validación básica.
+
 ---
 
 ##  Comunicación entre componentes
