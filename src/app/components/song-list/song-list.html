@@ -1,0 +1,27 @@
+<!-- Componente que muestra la lista de canciones guardadas, permitie abrirlas en YouTube o eliminarlas -->
+
+<div class="list">
+  <h2 class="title">Canciones guardadas</h2>
+
+  @if (canciones.length === 0) {
+    <p class="empty">No hay canciones guardadas, CORRE GUARDA UNA !!!!</p>
+  } @else {
+    <div class="grid">
+      @for (c of canciones; track c.youtubeId) {
+        <div class="card">
+          <div class="info">
+            <div class="song-title">{{ c.titulo }}</div>
+            <div class="song-author">{{ c.autor }}</div>
+          </div>
+
+          <a class="link" [href]="c.youtubeId" >
+            Abrir {{ c.titulo }} en YouTube
+          </a>
+          <button class="delete" type="button" (click)="confirmarEliminar(c.youtubeId)">
+            Eliminar
+          </button>
+        </div>
+      }
+    </div>
+  }
+</div>

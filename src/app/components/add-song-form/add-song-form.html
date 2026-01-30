@@ -1,0 +1,15 @@
+<form class="add-form" (ngSubmit)="addSong()">
+  <h2>Añadir canción</h2>
+
+  <input type="text" placeholder="Nombre de la canción" name="titulo" [(ngModel)]="titulo" />
+
+  <input type="text" placeholder="Autor" name="autor" [(ngModel)]="autor" />
+
+  <input type="text" placeholder="Link de YouTube" name="youtube" [(ngModel)]="youtubeLink" />
+
+  @if (error) {
+    <small class="error">{{ error }}</small>
+  }
+
+  <button type="submit">Añadir</button>
+</form>

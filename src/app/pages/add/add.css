@@ -1,0 +1,6 @@
+.add-page {
+  min-height: calc(100vh - 70px); /* resta menú */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

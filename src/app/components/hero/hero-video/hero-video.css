@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+iframe {
+  width: min(900px, 90vw);   /* tamaño controlado */
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 18px;
+  border: 0;
+}

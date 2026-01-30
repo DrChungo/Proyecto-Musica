@@ -1,0 +1,17 @@
+<form class="login-form" (ngSubmit)="login()">
+  <h2>Log in</h2>
+<!-- Validacion de email -->
+  <input type="email" placeholder="Email" name="email" [(ngModel)]="email" />
+
+  @if (errorEmail) {
+    <small class="error">{{ errorEmail }}</small>
+  }
+<!-- Validacion de password -->
+  <input type="password" placeholder="Password" name="password" [(ngModel)]="password" />
+
+  @if (errorPassword) {
+    <small class="error">{{ errorPassword }}</small>
+  }
+
+  <button type="submit">Entrar</button>
+</form>
