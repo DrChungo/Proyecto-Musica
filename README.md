@@ -51,21 +51,21 @@ src/
 - **MenuComponent**
   - Barra de navegación entre las pestañas
 
-- **HeroComponent**
+- **Hero**
   - Contiene el vídeo principal
   - Título arriba del vídeo
   - Botones debajo del vídeo
 
-- **GuardadasComponent**
+- **Guardadast**
   - Muestra las canciones guardadas
   - Usa un componente hijo para listarlas
 
-- **ListaCancionesComponent**
+- **ListaCanciones**
   - Muestra cada canción en un `div`
   - Botón para ir al enlace
   - Botón para eliminar la canción
 
-- **AñadirComponent**
+- **Añadir**
   - Input para introducir el link de la canción
   - Botón para añadirla a la lista
 
