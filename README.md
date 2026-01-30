@@ -1,59 +1,89 @@
-# ProyectTechno
+# Proyecto Angular – Techno Page
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+Este proyecto es una **aplicación web desarrollada con Angular** cuya temática principal es el **techno**. La idea es ofrecer una página sencilla, visual y funcional donde poder reproducir un vídeo principal y gestionar una lista de canciones guardadas.
 
-## Development server
+El proyecto está pensado como ejercicio práctico de Angular, usando **componentes**, **routing**, **eventos**, **inputs/outputs** y **estilos personalizados**.
 
-To start a local development server, run:
 
-```bash
-ng serve
+## Ejecución del proyecto
+Descarga el repositorio descomprimelo en una carpeta y ejecuta el archivo **run.bat**. Asegurate de tener todas las dependencias "npm install" en tu consola de comandos
+
+
+##  Idea general
+
+La aplicación se divide en **tres pestañas principales**:
+
+1. **Inicio** – Página principal con un vídeo centrado y controles
+2. **Guardadas** – Lista de canciones guardadas (enlaces)
+3. **Añadir** – Formulario para añadir nuevas canciones
+
+Todo el flujo está orientado a ser simple y directo: añadir → guardar → mostrar → eliminar.
+
+---
+
+## Estructura de la aplicación
+
+La app está organizada por **componentes**, siguiendo buenas prácticas de Angular.
+
+```
+src/
+ ├── app/
+ │   ├── components/
+ │   │   ├── add-song-form/
+ │   │   ├── hero/
+ │   │   ├── login-form/
+ │   │   ├── menu/
+ │   │   └── song-list/
+ │   ├── pages/
+ │   │   ├── add/
+ │   │   ├── guardadas/
+ │   │   ├── login/
+ │   │   └── principal/
+ │   ├── Models/
+ │   │   └── song.ts
+ │   └──services/
+ │      └── songs.ts
+
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Componentes clave
 
-## Code scaffolding
+- **MenuComponent**
+  - Barra de navegación entre las pestañas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **HeroComponent**
+  - Contiene el vídeo principal
+  - Título arriba del vídeo
+  - Botones debajo del vídeo
 
-```bash
-ng generate component component-name
-```
+- **GuardadasComponent**
+  - Muestra las canciones guardadas
+  - Usa un componente hijo para listarlas
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **ListaCancionesComponent**
+  - Muestra cada canción en un `div`
+  - Botón para ir al enlace
+  - Botón para eliminar la canción
 
-```bash
-ng generate --help
-```
+- **AñadirComponent**
+  - Input para introducir el link de la canción
+  - Botón para añadirla a la lista
 
-## Building
+---
 
-To build the project run:
+##  Comunicación entre componentes
 
-```bash
-ng build
-```
+- Se usan **@Input()** para pasar la lista de canciones a los componentes hijos
+- Se usan **@Output() + EventEmitter** para:
+  - Eliminar canciones
+  - Notificar acciones al componente padre
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Esto mantiene la app modular y fácil de escalar.
 
-## Running unit tests
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
